@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Lato, sans-serif;
+}
+
+.digital_clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(rgba(63, 49, 49, 0.548), rgba(0, 0, 0, 0.548)), url(images\ \(20\).jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    
+    animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        box-shadow: inset 50px 50px 90px rgba(128, 128, 128, 0.288), inset -50px -50px 90px rgba(128, 128, 128, 0.288);
+    };
+    50% {
+        box-shadow: inset 50px 50px 90px rgb(255, 0, 0), inset -50px -50px 90px rgb(0, 255, 128);
+    };
+    100% {
+        box-shadow: inset 50px 50px 90px rgb(179, 255, 0), inset -50px -50px 90px rgba(128, 128, 128, 0.288);
+    }
+}
+
+
+.digital_clock h3,
+.digital_clock #date {
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+}
+
+.digital_clock #time {
+    display: flex;
+}
+.digital_clock #time div{
+    position: relative;
+    margin: 0 5px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+}
+
+
+.digital_clock #time div span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 80px;
+    color: #fff;
+    font-size: 2em;
+    font-weight: 600;
+    background-color: rgb(0, 255, 255);
+    text-transform: uppercase;
+    box-shadow: 0 0 0 1px rgb(119, 119, 119);
+    z-index: 10;
+}
+
+.digital_clock #time div span:nth-child(2){
+    font-size: 0.3em;
+    height: 30px;
+    letter-spacing: 0.1em;
+    background-color: rgba(200, 200, 188, 0.884);
+}
+ 
+
+.digital_clock #time div:last-child span:nth-child(1),
+.digital_clock #time div:last-child span:nth-child(2) {
+    background-color: rgb(255, 95, 125);
+ }
+
+
+ .digital_clock #time div:nth-child(3) span:nth-child(1) {
+    background-color: rgb(0, 255, 255);
+    animation: slide 1.07s linear infinite;
+}
+ @keyframes slide {
+      0% { background-color: rgb(255, 95, 125); }
+     100% { background-color: rgb(0, 255, 255); }
+ }
+
+ .digital_clock #time div:nth-child(3) span:nth-child(2) {
+    background-color: rgb(0, 255, 255);
+    animation: slide 1s linear infinite;
+}
+ @keyframes slide {
+      0% {  background-color: rgb(0, 255, 255);}
+     100% { background-color: rgb(255, 95, 125);}
+ }
